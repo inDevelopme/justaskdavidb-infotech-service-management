@@ -1,0 +1,183 @@
+name: "🎓 Bootcamp Participation Request"
+description: "Request to join the JustAskDavidB Bootcamp"
+title: "[Bootcamp] <Your First Name> - <Field of Study>"
+labels: ["bootcamp-request"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## Welcome to the JustAskDavidB Bootcamp!
+        
+        Thank you for your interest in joining our bootcamp program. Please complete this form to request participation.
+        
+        **Bootcamp Information:** [www.justaskdavidb.com](https://www.justaskdavidb.com)
+
+  - type: markdown
+    attributes:
+      value: "## Personal Information"
+
+  - type: input
+    id: first-name
+    attributes:
+      label: "First Name"
+      description: "Please enter your first name"
+      placeholder: "John"
+    validations:
+      required: true
+
+  - type: input
+    id: last-initial
+    attributes:
+      label: "First Letter of Last Name"
+      description: "Please enter the first letter of your last name"
+      placeholder: "D"
+    validations:
+      required: true
+
+  - type: input
+    id: linkedin-url
+    attributes:
+      label: "LinkedIn Profile URL"
+      description: "Please provide your LinkedIn profile URL"
+      placeholder: "https://www.linkedin.com/in/your-profile"
+    validations:
+      required: true
+
+  - type: markdown
+    attributes:
+      value: "## Education & Career Information"
+
+  - type: dropdown
+    id: field-of-study
+    attributes:
+      label: "Field of Study of Interest"
+      description: "Select your field of study or area of interest"
+      options:
+        - Computer Science
+        - Information Technology
+        - Software Engineering
+        - Data Science
+        - Cybersecurity
+        - Web Development
+        - Mobile Development
+        - Cloud Computing
+        - DevOps
+        - Artificial Intelligence/Machine Learning
+        - Business Administration
+        - Other
+    validations:
+      required: true
+
+  - type: dropdown
+    id: education-level
+    attributes:
+      label: "Current Education Level"
+      description: "Select your current education level"
+      options:
+        - High School Student
+        - High School Graduate
+        - Some College
+        - Associate Degree
+        - Bachelor's Degree (In Progress)
+        - Bachelor's Degree (Completed)
+        - Master's Degree (In Progress)
+        - Master's Degree (Completed)
+        - Doctoral Degree
+        - Trade/Technical Certification
+        - Self-Taught
+    validations:
+      required: true
+
+  - type: markdown
+    attributes:
+      value: "## Bootcamp Preferences"
+
+  - type: dropdown
+    id: session-type
+    attributes:
+      label: "Preferred Session Type"
+      description: "Select your preferred bootcamp session format"
+      options:
+        - Virtual (Online)
+        - On-Site (In-Person)
+        - Either Virtual or On-Site
+    validations:
+      required: true
+
+  - type: dropdown
+    id: start-month
+    attributes:
+      label: "Desired Bootcamp Start Month"
+      description: "Select your preferred month to start the bootcamp"
+      options:
+        - January
+        - February
+        - March
+        - April
+        - May
+        - June
+        - July
+        - August
+        - September
+        - October
+        - November
+        - December
+    validations:
+      required: true
+
+  - type: markdown
+    attributes:
+      value: "## Goals & Objectives"
+
+  - type: textarea
+    id: learning-objectives
+    attributes:
+      label: "Learning Objectives"
+      description: "Please describe your learning objectives and what you hope to achieve from the bootcamp"
+      placeholder: |
+        - What skills do you want to develop?
+        - What are your career goals?
+        - What specific topics are you most interested in learning?
+    validations:
+      required: true
+
+  - type: dropdown
+    id: job-type
+    attributes:
+      label: "Desired Job Type Within 1 Year"
+      description: "Select the type of job role you hope to achieve within 1 year of completing the bootcamp"
+      options:
+        - Junior Software Developer
+        - Software Engineer
+        - Frontend Developer
+        - Backend Developer
+        - Full Stack Developer
+        - Data Analyst
+        - Data Scientist
+        - DevOps Engineer
+        - Cloud Engineer
+        - Cybersecurity Analyst
+        - IT Support Specialist
+        - System Administrator
+        - Quality Assurance Engineer
+        - Product Manager
+        - Technical Consultant
+        - Freelancer/Contractor
+        - Entrepreneur/Start Own Business
+        - Other
+    validations:
+      required: true
+
+  - type: markdown
+    attributes:
+      value: |
+        ---
+        
+        ## Next Steps
+        
+        After you submit this form:
+        1. Our team will review your application
+        2. You will be contacted via email with next steps
+        3. We may schedule a brief informational interview
+        
+        Thank you for your interest in the JustAskDavidB Bootcamp!
