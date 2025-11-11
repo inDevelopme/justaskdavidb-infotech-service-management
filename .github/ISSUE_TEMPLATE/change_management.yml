@@ -3,14 +3,355 @@ description: "Submit a change request"
 title: "[Change] <short description>"
 labels: ["change-request"]
 body: 
-  - type: dropdown
-    id: env
+  - type: markdown
     attributes:
-      label: "Environment"
-      description: "Select which environment this change affects."
+      value: "## Change Information"
+
+  - type: textarea
+    id: change-summary
+    attributes:
+      label: "Change Summary"
+      description: "Provide a brief, high-level summary of the change"
+      placeholder: "Summary of the change"
+
+  - type: dropdown
+    id: change-type
+    attributes:
+      label: "Change Type"
+      description: "Select the type of change"
       options:
-        - production
-        - local
-        - other
-    validations:
-      required: true
+        - Standard Change (Pre-approved, low-risk)
+        - Normal Change (Requires CAB approval)
+        - Emergency Change (Critical, requires expedited approval)
+
+  - type: dropdown
+    id: priority
+    attributes:
+      label: "Priority"
+      description: "Select the change priority"
+      options:
+        - Critical (P1) - System down, major business impact
+        - High (P2) - Significant impact, workaround available
+        - Medium (P3) - Moderate impact
+        - Low (P4) - Minor impact, cosmetic
+
+  - type: markdown
+    attributes:
+      value: "## Business Justification"
+
+  - type: textarea
+    id: reason-for-change
+    attributes:
+      label: "Reason for Change"
+      description: "Explain why this change is needed"
+      placeholder: "Reason for change"
+
+  - type: textarea
+    id: business-impact-if-not-implemented
+    attributes:
+      label: "Business Impact if NOT Implemented"
+      description: "Describe what happens if we don't make this change"
+      placeholder: "Impact if not implemented"
+
+  - type: textarea
+    id: expected-benefits
+    attributes:
+      label: "Expected Benefits"
+      description: "Describe what improvements this change will deliver"
+      placeholder: "Expected benefits"
+
+  - type: markdown
+    attributes:
+      value: "## Technical Details"
+
+  - type: textarea
+    id: systems-affected
+    attributes:
+      label: "Systems/Applications Affected"
+      description: "List all systems, applications, or services impacted"
+      placeholder: "Systems/applications/services impacted"
+
+  - type: textarea
+    id: dependencies
+    attributes:
+      label: "Dependencies"
+      description: "List any dependencies on other systems, teams, or changes"
+      placeholder: "Dependencies"
+
+  - type: textarea
+    id: integration-points
+    attributes:
+      label: "Integration Points"
+      description: "Describe any integration points that may be affected"
+      placeholder: "Integration points"
+
+  - type: markdown
+    attributes:
+      value: "## Change Plan"
+
+  - type: textarea
+    id: pre-change-activities
+    attributes:
+      label: "Pre-Change Activities"
+      description: "List all activities that must be completed before the change"
+      placeholder: "- Item 1\n- Item 2\n- Item 3"
+
+  - type: textarea
+    id: implementation-steps
+    attributes:
+      label: "Implementation Steps"
+      description: "Detailed, step-by-step instructions for implementing the change"
+      placeholder: "- Step 1\n- Step 2\n- Step 3\n- Step 4\n- Step 5"
+
+  - type: textarea
+    id: post-change-activities
+    attributes:
+      label: "Post-Change Activities"
+      description: "List all verification and validation steps after implementation"
+      placeholder: "- Step 1\n- Step 2\n- Step 3"
+
+  - type: input
+    id: estimated-duration
+    attributes:
+      label: "Estimated Duration"
+      description: "How long will this change take to implement? (Preparation, Implementation, Validation, Total)"
+      placeholder: "E.g., Preparation: 2h, Implementation: 1h, Validation: 1h, Total: 4h"
+
+  - type: markdown
+    attributes:
+      value: "## Testing & Validation"
+
+  - type: textarea
+    id: test-environment-results
+    attributes:
+      label: "Test Environment Results"
+      description: "Evidence of testing in non-production environments"
+      placeholder: "Test results summary"
+
+  - type: textarea
+    id: test-evidence
+    attributes:
+      label: "Test Evidence"
+      description: "Screenshots, logs, or other evidence of successful testing. (You can attach files after submitting the issue.)"
+      placeholder: "Attach or describe evidence"
+
+  - type: textarea
+    id: validation-criteria
+    attributes:
+      label: "Validation Criteria"
+      description: "How will we know the change was successful?"
+      placeholder: "- Criteria 1\n- Criteria 2\n- Criteria 3"
+
+  - type: checkboxes
+    id: acceptance-criteria
+    attributes:
+      label: "Acceptance Criteria"
+      description: "What must be true for this change to be considered complete?"
+      options:
+        - label: ""
+        - label: ""
+        - label: ""
+
+  - type: markdown
+    attributes:
+      value: "## Risk Assessment"
+
+  - type: dropdown
+    id: risk-level
+    attributes:
+      label: "Risk Level"
+      description: "Select the risk level"
+      options:
+        - High Risk
+        - Medium Risk
+        - Low Risk
+
+  - type: textarea
+    id: potential-risks
+    attributes:
+      label: "Potential Risks"
+      description: "List potential risks and their impact"
+      placeholder: "| Risk | Impact | Likelihood | Mitigation |\n|------|--------|------------|------------|\n| ...  | ...    | ...        | ...        |"
+
+  - type: textarea
+    id: security-considerations
+    attributes:
+      label: "Security Considerations"
+      description: "Are there any security implications?"
+      placeholder: "Security considerations"
+
+  - type: markdown
+    attributes:
+      value: "## Backout Plan"
+
+  - type: textarea
+    id: backout-trigger-conditions
+    attributes:
+      label: "Backout Trigger Conditions"
+      description: "Under what circumstances should we rollback?"
+      placeholder: "- Condition 1\n- Condition 2\n- Condition 3"
+
+  - type: textarea
+    id: backout-steps
+    attributes:
+      label: "Backout Steps"
+      description: "Provide detailed steps to reverse the change if needed"
+      placeholder: "- Step 1\n- Step 2\n- Step 3\n- Step 4"
+
+  - type: input
+    id: backout-duration
+    attributes:
+      label: "Backout Duration"
+      description: "How long will it take to rollback?"
+      placeholder: "E.g., 30m"
+
+  - type: textarea
+    id: data-preservation
+    attributes:
+      label: "Data Preservation"
+      description: "How will data be preserved during backout?"
+      placeholder: "Data preservation plan"
+
+  - type: markdown
+    attributes:
+      value: "## Runbook"
+
+  - type: textarea
+    id: normal-operation-procedure
+    attributes:
+      label: "Normal Operation Procedure"
+      description: "Document how to operate the system after the change"
+      placeholder: "Operation procedure"
+
+  - type: textarea
+    id: monitoring-alerts
+    attributes:
+      label: "Monitoring & Alerts"
+      description: "What should be monitored? What alerts should be configured?"
+      placeholder: "Monitoring and alerting plan"
+
+  - type: textarea
+    id: troubleshooting-guide
+    attributes:
+      label: "Troubleshooting Guide"
+      description: "Common issues and how to resolve them"
+      placeholder: "Troubleshooting steps"
+
+  - type: textarea
+    id: emergency-contacts
+    attributes:
+      label: "Emergency Contacts"
+      description: "Who should be contacted if issues arise?"
+      placeholder: "Primary Contact: \nSecondary Contact: \nEscalation Contact: "
+
+  - type: markdown
+    attributes:
+      value: "## Change Schedule"
+
+  - type: input
+    id: proposed-implementation-date-time
+    attributes:
+      label: "Proposed Implementation Date/Time"
+      description: "When will this change be implemented?"
+      placeholder: "YYYY-MM-DD HH:MM Timezone"
+
+  - type: dropdown
+    id: maintenance-window
+    attributes:
+      label: "Maintenance Window"
+      description: "Is this during a scheduled maintenance window?"
+      options:
+        - Yes - Scheduled maintenance window
+        - No - Ad-hoc change
+
+  - type: textarea
+    id: communication-plan
+    attributes:
+      label: "Communication Plan"
+      description: "How will stakeholders be notified?"
+      placeholder: "Communication plan"
+
+  - type: textarea
+    id: blackout-periods
+    attributes:
+      label: "Blackout Periods"
+      description: "Are there any dates/times when this change should NOT be made?"
+      placeholder: "Blackout dates/times"
+
+  - type: markdown
+    attributes:
+      value: "## Approvals"
+
+  - type: checkboxes
+    id: cab-approval
+    attributes:
+      label: "Change Advisory Board (CAB)"
+      description: "For Normal and Emergency changes"
+      options:
+        - label: "CAB Review Required"
+        - label: "CAB Approval Obtained"
+
+  - type: checkboxes
+    id: additional-approvals
+    attributes:
+      label: "Additional Approvals"
+      description: "List any additional approvals required"
+      options:
+        - label: "Technical Lead Approval"
+        - label: "Business Owner Approval"
+        - label: "Security Team Approval"
+        - label: "Infrastructure Team Approval"
+
+  - type: markdown
+    attributes:
+      value: "## Post-Implementation Review"
+
+  - type: input
+    id: actual-vs-planned
+    attributes:
+      label: "Actual vs Planned (To be completed after implementation)"
+      description: "Duration/Issues comparison"
+      placeholder: "Planned Duration:  | Actual Duration:  | Issues Encountered: "
+
+  - type: textarea
+    id: lessons-learned
+    attributes:
+      label: "Lessons Learned"
+      description: "What did we learn from this change?"
+      placeholder: "Lessons learned"
+
+  - type: checkboxes
+    id: documentation-updates
+    attributes:
+      label: "Documentation Updates"
+      description: "What documentation needs to be updated?"
+      options:
+        - label: "System documentation updated"
+        - label: "Runbook updated"
+        - label: "User guides updated"
+        - label: "Architecture diagrams updated"
+
+  - type: markdown
+    attributes:
+      value: "## Additional Information"
+
+  - type: textarea
+    id: related-changes
+    attributes:
+      label: "Related Changes"
+      description: "Link to related change requests"
+      placeholder: "Related changes"
+
+  - type: textarea
+    id: related-incidents-problems
+    attributes:
+      label: "Related Incidents/Problems"
+      description: "Link to any related incidents or problems"
+      placeholder: "Related incidents/problems"
+
+  - type: textarea
+    id: attachments
+    attributes:
+      label: "Attachments"
+      description: "Attach any additional documentation, diagrams, or evidence"
+      placeholder: "Attach files after submitting the issue"
