@@ -12,5 +12,5 @@ body:
         - production
         - local
         - other
-      validations:
-        required: true
+    validations:
+      required: true
