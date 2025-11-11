@@ -1,0 +1,126 @@
+name: "💼 Recruiter Role Submission"
+description: "Submit a job opportunity to share with the community"
+title: "[Job] <Job Title>"
+labels: ["job-opportunity"]
+body:
+  - type: markdown
+    attributes:
+      value: "## Job Opportunity Submission"
+
+  - type: markdown
+    attributes:
+      value: "Thank you for sharing this opportunity with our community! Please provide the details below."
+
+  - type: markdown
+    attributes:
+      value: "## Recruiter Information"
+
+  - type: input
+    id: recruiter-name
+    attributes:
+      label: "Recruiter Name"
+      description: "Your full name"
+      placeholder: "e.g., John Smith"
+    validations:
+      required: true
+
+  - type: input
+    id: company-agency
+    attributes:
+      label: "Company/Agency"
+      description: "Name of the company or recruiting agency"
+      placeholder: "e.g., Tech Solutions Inc. or ABC Recruiting Agency"
+    validations:
+      required: true
+
+  - type: input
+    id: contact-info
+    attributes:
+      label: "Contact Information"
+      description: "Your email address or phone number"
+      placeholder: "e.g., john.smith@example.com or +1-555-0123"
+    validations:
+      required: true
+
+  - type: markdown
+    attributes:
+      value: "## Job Details"
+
+  - type: input
+    id: job-title
+    attributes:
+      label: "Job Title"
+      description: "The title of the position"
+      placeholder: "e.g., Senior Software Engineer"
+    validations:
+      required: true
+
+  - type: textarea
+    id: job-description
+    attributes:
+      label: "Job Description"
+      description: "Provide a detailed description of the role, responsibilities, and requirements"
+      placeholder: "Include key responsibilities, required skills, qualifications, and any other relevant information about the position..."
+    validations:
+      required: true
+
+  - type: dropdown
+    id: job-type
+    attributes:
+      label: "Job Type"
+      description: "Select the employment type"
+      options:
+        - Full-time
+        - Part-time
+        - Contract
+        - Internship
+    validations:
+      required: true
+
+  - type: dropdown
+    id: work-location
+    attributes:
+      label: "Work Location"
+      description: "Select the work arrangement"
+      options:
+        - Remote
+        - On-site
+        - Hybrid
+    validations:
+      required: true
+
+  - type: input
+    id: geographic-location
+    attributes:
+      label: "Geographic Location"
+      description: "City, state/province, and country (optional for remote positions)"
+      placeholder: "e.g., San Francisco, CA, USA"
+    validations:
+      required: false
+
+  - type: input
+    id: salary-range
+    attributes:
+      label: "Salary Range"
+      description: "Compensation range (optional)"
+      placeholder: "e.g., $100,000 - $150,000 per year"
+    validations:
+      required: false
+
+  - type: input
+    id: application-link
+    attributes:
+      label: "Application Link/Email"
+      description: "Where should candidates apply?"
+      placeholder: "e.g., https://careers.example.com/job/12345 or careers@example.com"
+    validations:
+      required: true
+
+  - type: textarea
+    id: additional-notes
+    attributes:
+      label: "Additional Notes"
+      description: "Any additional information about the position or application process (optional)"
+      placeholder: "Include any special instructions, benefits, perks, or other relevant details..."
+    validations:
+      required: false
