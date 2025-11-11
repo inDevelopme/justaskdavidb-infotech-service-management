@@ -10,6 +10,10 @@ This directory contains templates for IT Service Management (ITSM) processes, sp
 
 A comprehensive change request template designed for Change Advisory Board (CAB) approval processes. This template follows ITSM best practices and includes all essential components required for managing production changes safely and effectively.
 
+**Related Documents**:
+- [Quick Reference Guide](QUICK_REFERENCE.md) - Key sections for CAB approval
+- [Example Change Request](EXAMPLE_CHANGE_REQUEST.md) - Sample filled-out template
+
 #### Key Features
 
 The template includes:
