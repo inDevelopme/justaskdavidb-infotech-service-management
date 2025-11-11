@@ -1,0 +1,16 @@
+name: "Adv. Change Request"
+description: "Submit a change request"
+title: "[Change] <short description>"
+labels: ["change-request"]
+body: 
+  - type: dropdown
+    id: env
+    attributes:
+      label: "Environment"
+      description: "Select which environment this change affects."
+      options:
+        - production
+        - local
+        - other
+      validations:
+        required: true
