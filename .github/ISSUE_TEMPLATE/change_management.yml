@@ -142,7 +142,7 @@ body:
       description: "How will we know the change was successful?"
       placeholder: "- Criteria 1\n- Criteria 2\n- Criteria 3"
 
-  - type: checkboxes
+  - type: textarea
     id: acceptance-criteria
     attributes:
       label: "Acceptance Criteria"
