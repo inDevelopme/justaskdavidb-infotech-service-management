@@ -147,10 +147,6 @@ body:
     attributes:
       label: "Acceptance Criteria"
       description: "What must be true for this change to be considered complete?"
-      options:
-        - label: ""
-        - label: ""
-        - label: ""
 
   - type: markdown
     attributes:
