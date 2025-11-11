@@ -1,0 +1,103 @@
+name: "📚 Documentation Request"
+description: "Request creation or updates to documentation for ITSM projects"
+title: "[DOC] <short description>"
+labels: ["documentation", "service-request"]
+body: 
+  - type: markdown
+    attributes:
+      value: "## Documentation Request Information"
+
+  - type: textarea
+    id: summary
+    attributes:
+      label: "Request Summary"
+      description: "Provide a brief summary of the documentation request"
+      placeholder: "Brief description of what documentation is needed"
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: document-type
+    attributes:
+      label: "Document Type"
+      description: "Select all document types that apply (multiple selections allowed)"
+      options:
+        - label: "Technical Documentation"
+        - label: "User Guide"
+        - label: "API Documentation"
+        - label: "Architecture Documentation"
+        - label: "Process Documentation"
+        - label: "Runbook"
+        - label: "Other"
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: audience
+    attributes:
+      label: "Intended Audience"
+      description: "Select all audiences that will use this documentation (multiple selections allowed)"
+      options:
+        - label: "End Users"
+        - label: "Developers"
+        - label: "System Administrators"
+        - label: "Management"
+        - label: "External Customers"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: current-status
+    attributes:
+      label: "Current Documentation Status"
+      description: "What is the current state of documentation for this subject?"
+      options:
+        - "No documentation exists"
+        - "Documentation exists but needs updates"
+        - "Documentation exists but inadequate"
+    validations:
+      required: true
+
+  - type: markdown
+    attributes:
+      value: "## Documentation Details"
+
+  - type: textarea
+    id: subject-system
+    attributes:
+      label: "Subject/System"
+      description: "What system, process, or subject needs documentation?"
+      placeholder: "Name and describe the system or process that requires documentation"
+    validations:
+      required: true
+
+  - type: textarea
+    id: specific-requirements
+    attributes:
+      label: "Specific Requirements"
+      description: "What specific information or topics should be included in the documentation?"
+      placeholder: "- Topic 1\n- Topic 2\n- Topic 3"
+    validations:
+      required: true
+
+  - type: textarea
+    id: business-justification
+    attributes:
+      label: "Business Justification"
+      description: "Why is this documentation needed? What business value will it provide?"
+      placeholder: "Explain the business need and expected benefits"
+    validations:
+      required: true
+
+  - type: markdown
+    attributes:
+      value: "## Additional Information"
+
+  - type: textarea
+    id: additional-notes
+    attributes:
+      label: "Additional Notes/Attachments"
+      description: "Any additional context, requirements, or notes. You can also attach files after submitting the issue."
+      placeholder: "Optional: Add any additional information that would be helpful"
+    validations:
+      required: false
