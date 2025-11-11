@@ -1,4 +1,4 @@
-name: "Adv. Change Request"
+name: "🔄 Adv. Change Request"
 description: "Submit a change request"
 title: "[Change] <short description>"
 labels: ["change-request"]
