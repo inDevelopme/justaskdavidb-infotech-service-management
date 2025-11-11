@@ -1,0 +1,94 @@
+name: "🔐 Repository Access Request"
+description: "Request access to a repository"
+title: "[Repository Access] <repository name>"
+labels: ["repository-access", "access-request"]
+body: 
+  - type: markdown
+    attributes:
+      value: "## Access Request Information"
+
+  - type: dropdown
+    id: priority
+    attributes:
+      label: "Priority"
+      description: "Select the request priority"
+      options:
+        - Critical (P1) - Urgent, blocking work
+        - High (P2) - Important, needed soon
+        - Medium (P3) - Moderate priority
+        - Low (P4) - Nice to have
+    validations:
+      required: true
+
+  - type: textarea
+    id: detailed-description
+    attributes:
+      label: "Detailed Description"
+      description: "Provide a comprehensive description of your access request"
+      placeholder: "Explain what you need access to and why"
+    validations:
+      required: true
+
+  - type: textarea
+    id: business-justification
+    attributes:
+      label: "Business Justification"
+      description: "Explain the business need for this access"
+      placeholder: "Why is this access necessary for your work?"
+    validations:
+      required: true
+
+  - type: markdown
+    attributes:
+      value: "## Repository Information"
+
+  - type: input
+    id: repository-name
+    attributes:
+      label: "Repository Name"
+      description: "Enter the name of the repository"
+      placeholder: "e.g., my-project-repo"
+    validations:
+      required: true
+
+  - type: input
+    id: repository-url
+    attributes:
+      label: "Repository URL"
+      description: "Enter the full URL of the repository"
+      placeholder: "e.g., https://github.com/organization/repository-name"
+    validations:
+      required: true
+
+  - type: markdown
+    attributes:
+      value: "## Access Details"
+
+  - type: checkboxes
+    id: features-requested
+    attributes:
+      label: "Feature(s) Requested"
+      description: "Select all features you need access to"
+      options:
+        - label: "Code"
+        - label: "Issues"
+        - label: "Wiki"
+        - label: "Discussions"
+        - label: "Pull Requests"
+        - label: "Projects"
+        - label: "Settings"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: access-permissions
+    attributes:
+      label: "Access Permissions"
+      description: "Select the permission level needed (C=Create, R=Read, U=Update, D=Delete)"
+      options:
+        - "CRU (Create, Read, Update)"
+        - "RUD (Read, Update, Delete)"
+        - "RU (Read, Update)"
+        - "CRUD (Create, Read, Update, Delete)"
+    validations:
+      required: true
