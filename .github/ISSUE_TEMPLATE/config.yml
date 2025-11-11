@@ -1,0 +1,5 @@
+blank_issues_enabled: false
+contact_links:
+  - name: 📚 ITSM Documentation
+    url: https://github.com/inDevelopme/justaskdavidb-infotech-service-management/blob/main/docs/guides/ITSM_OVERVIEW.md
+    about: Learn about ITSM processes and best practices

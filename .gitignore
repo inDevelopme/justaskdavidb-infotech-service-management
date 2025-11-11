@@ -1,0 +1,36 @@
+# IDE and Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Temporary files
+*.tmp
+*.temp
+*.log
+.cache/
+
+# Build artifacts (if any are added in future)
+dist/
+build/
+*.zip
+*.tar.gz
+
+# OS files
+Thumbs.db
+desktop.ini
+
+# Node modules (if any JavaScript tooling is added)
+node_modules/
+
+# Python virtual environments (if any Python tooling is added)
+venv/
+env/
+__pycache__/
+*.pyc
+
+# Backup files
+*.bak
+*.backup
